@@ -10,6 +10,7 @@ public class GenerateCubes : MonoBehaviour {
 	public float spectrumScaleMultiplier = 30.0f;
 	public float mathLerpMultiplier = 20.0f;
 	public Vector3 initialCubeSize = new Vector3(1,1,1);
+	public float[] spectrum;
 
 	// Use this for initialization
 	void Start () {
@@ -26,11 +27,15 @@ public class GenerateCubes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float[] spectrum = AudioListener.GetSpectrumData (1024, 0, FFTWindow.Hamming);
+		spectrum = AudioListener.GetSpectrumData (1024, 0, FFTWindow.Hamming);
 		for (int i = 0; i < numberOfCubes; i++) {
 			Vector3 previousScale = musicCubes [i].transform.localScale;
 			previousScale.y = Mathf.Lerp (previousScale.y, spectrum[i] * spectrumScaleMultiplier, Time.deltaTime * mathLerpMultiplier);
 			musicCubes [i].transform.localScale = previousScale;
 		}
+	}
+
+	public float[] getLatestSpectrumData() {
+		return spectrum;
 	}
 }
