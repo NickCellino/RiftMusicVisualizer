@@ -90,8 +90,8 @@ NavMeshSettings:
 --- !u!1 &158730255
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 154944, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+  m_PrefabInternal: {fileID: 481832778}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 158730257}
@@ -106,8 +106,9 @@ GameObject:
 --- !u!108 &158730256
 Light:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 10814288, guid: 4eed1510333111e44a6d7528912f3e9d,
+    type: 2}
+  m_PrefabInternal: {fileID: 481832778}
   m_GameObject: {fileID: 158730255}
   m_Enabled: 1
   serializedVersion: 6
@@ -138,8 +139,8 @@ Light:
 --- !u!4 &158730257
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+  m_PrefabInternal: {fileID: 481832778}
   m_GameObject: {fileID: 158730255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.5443001, y: 10.6000004, z: -9.33940029}
@@ -147,6 +148,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1001 &481832778
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -12.5443001
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.33940029
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 477640, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 154944, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_Name
+      value: Point light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &530138370
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +202,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 530138371}
-  - 114: {fileID: 530138372}
   m_Layer: 0
   m_Name: HousingCube
   m_TagString: Untagged
@@ -181,18 +227,6 @@ Transform:
   - {fileID: 968565237}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &530138372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 530138370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6058447509de354783b505c1c6072b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorLerpMultiplier: 28
 --- !u!1 &532121670
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +311,7 @@ GameObject:
   - 114: {fileID: 586183502}
   - 81: {fileID: 586183504}
   m_Layer: 0
-  m_Name: MusicCubeContainer
+  m_Name: MusicalObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,13 +329,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCubes: 25
+  numBalls: 25
   radius: 2
   cubePrefab: {fileID: 157996, guid: 603b69890fb6142438a765cfb6b11f48, type: 2}
+  ballPrefab: {fileID: 163772, guid: f0a91ee5fc6a65440aba59f57e6cd5f1, type: 2}
   musicCubes: []
   spectrumScaleMultiplier: 40
   mathLerpMultiplier: 20
   initialCubeSize: {x: .150000006, y: .5, z: .150000006}
+  initialBallSize: {x: 4, y: 4, z: 4}
   spectrum: []
+  musicBalls: []
+  ballMaterials:
+  - {fileID: 2100000, guid: adc4706a58c141e41ad38803a191f022, type: 2}
+  - {fileID: 2100000, guid: 9a80c10a1e3d29e48bd978cc884f17ec, type: 2}
+  - {fileID: 2100000, guid: c1d0bb561443b6d47bfd30d27e58d281, type: 2}
+  - {fileID: 2100000, guid: e509e0955c4afce44bc6ea9515a56527, type: 2}
+  - {fileID: 2100000, guid: eb7e19cd852c7d84abf293ade4e0a677, type: 2}
+  ballSpeed: 75
 --- !u!4 &586183503
 Transform:
   m_ObjectHideFlags: 0
