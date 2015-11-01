@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - music_cube
+  - music_ball
   layers:
   - Default
   - TransparentFX
