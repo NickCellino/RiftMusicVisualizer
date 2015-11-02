@@ -20,9 +20,14 @@ public class GenerateCubes : MonoBehaviour {
 	public Material[] ballMaterials;
 	public float ballSpeed;
 
+    void Awake()
+    {
+        AudioSourceSingleton.getInstance.play();
+    }
+
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < numberOfCubes; i++) {
+        for (int i = 0; i < numberOfCubes; i++) {
 			// Generate bar
 			float angle = i * Mathf.PI * 2 / numberOfCubes;
 			Vector3 pos = new Vector3(Mathf.Cos (angle), 0 , Mathf.Sin (angle)) * radius;

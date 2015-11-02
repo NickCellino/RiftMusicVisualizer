@@ -6,6 +6,7 @@ TagManager:
   tags:
   - music_cube
   - music_ball
+  - music_source
   layers:
   - Default
   - TransparentFX
