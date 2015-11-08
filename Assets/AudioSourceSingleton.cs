@@ -30,7 +30,6 @@ public class AudioSourceSingleton : MonoBehaviour {
             instance = this;
             audioSource = GameObject.FindGameObjectWithTag("music_source").GetComponent<AudioSource>();
             DontDestroyOnLoad(this);
-            //DontDestroyOnLoad(audioSource);
         }
         else
         {

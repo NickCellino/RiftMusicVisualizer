@@ -26,12 +26,12 @@ public class GUILayoutx
         {
             Rect elementRect = GUILayoutUtility.GetRect(list[i], elementStyle);
             bool hover = elementRect.Contains(Event.current.mousePosition);
-            if (hover && Event.current.type == EventType.MouseDown)
+            if (hover && Event.current.type == EventType.MouseDown && Event.current.clickCount == 1)
             {
                 selected = i;
                 Event.current.Use();
             }
-            else if (hover && callback != null && Event.current.type == EventType.MouseUp && Event.current.clickCount == 2)
+            else if (hover && callback != null && Event.current.type == EventType.MouseDown && Event.current.clickCount == 2)
             {
                 callback(i);
                 Event.current.Use();

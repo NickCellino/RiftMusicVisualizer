@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using NAudio;
+using NAudio.Wave;
 
 public class UIManagerScript : MonoBehaviour {
 
     protected FileBrowser fileBrowser;
+
+    [SerializeField]
+    protected Texture2D m_directoryImage, m_fileImage;
 
     protected void awake()
     {
@@ -35,26 +40,35 @@ public class UIManagerScript : MonoBehaviour {
     protected void FileSelected(string path)
     {
         fileBrowser = null;
-        path = "_Audio/Watsky - Nothing Like the First Time - 06 A Hundred Words You Could Say Instead of Swag.mp3";
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.Play();
         
-        string audio_path = "file://" + Application.dataPath + "/_Audio/06_Macklemore_Ryan_Lewis_-_Irish_Celebration.wav";
-        Debug.Log(audio_path);
-        WWW wtf = new WWW(audio_path);
-        while (!wtf.isDone)
-        {
-            // Wait until download finishes
-        }
-        
-        audio.clip = wtf.GetAudioClip(false);
-        audio.Play();
+        //path = "file://" + Application.dataPath + "/_Audio/06_Macklemore_Ryan_Lewis_-_Irish_Celebration.wav";
+     
         if (path != null)
         {
-            AudioSourceSingleton.getInstance.setClip((AudioClip)Resources.Load(path));
+            path = "file://" + path;
+            Debug.Log(path);
+            if(path.Contains(".mp3"))
+            {
+                using (Mp3FileReader reader = new Mp3FileReader(path))
+                {
+                    Debug.Log("Reached");
+                    path.Replace(".mp3", ".wav");
+                    WaveFileWriter.CreateWaveFile(path , reader);
+                }
+            }
+            Debug.Log(path);
+            WWW wtf = new WWW(path);
+
+            //Wait for wtf to finish
+            while (!wtf.isDone)
+            {
+            }
+            AudioSourceSingleton.getInstance.setClip(wtf.GetAudioClip(false));
         }
     }
 
-
-
+    public void ChooseGenre()
+    {
+        Debug.Log("Put selection of genre here");
+    }
 }
