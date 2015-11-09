@@ -40,23 +40,21 @@ public class UIManagerScript : MonoBehaviour {
     protected void FileSelected(string path)
     {
         fileBrowser = null;
-        
-        //path = "file://" + Application.dataPath + "/_Audio/06_Macklemore_Ryan_Lewis_-_Irish_Celebration.wav";
      
         if (path != null)
         {
-            path = "file://" + path;
             Debug.Log(path);
             if(path.Contains(".mp3"))
             {
+                Debug.Log(path);
                 using (Mp3FileReader reader = new Mp3FileReader(path))
                 {
                     Debug.Log("Reached");
-                    path.Replace(".mp3", ".wav");
+                    path = path.Replace(".mp3", ".wav");
                     WaveFileWriter.CreateWaveFile(path , reader);
                 }
             }
-            Debug.Log(path);
+            path = "file://" + path;
             WWW wtf = new WWW(path);
 
             //Wait for wtf to finish

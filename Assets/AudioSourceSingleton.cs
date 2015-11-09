@@ -40,7 +40,7 @@ public class AudioSourceSingleton : MonoBehaviour {
         }
     }
 
-    public void play()
+    public void Play()
     {
         audioSource.Play();
     }

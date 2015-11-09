@@ -22,7 +22,7 @@ public class GenerateCubes : MonoBehaviour {
 
     void Awake()
     {
-        AudioSourceSingleton.getInstance.play();
+        AudioSourceSingleton.getInstance.Play();
     }
 
 	// Use this for initialization
@@ -49,8 +49,7 @@ public class GenerateCubes : MonoBehaviour {
 		}
 		musicCubes = GameObject.FindGameObjectsWithTag ("music_cube");
 		musicBalls = GameObject.FindGameObjectsWithTag ("music_ball");
-
-	}
+    }
 
 	void FixedUpdate() {
 		for (int i = 0; i < musicBalls.Length; i++) {
