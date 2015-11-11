@@ -20,17 +20,28 @@ public class GenerateCubes : MonoBehaviour {
 	public Material[] ballMaterials;
 	public float ballSpeed;
 
+    float initial_lightBrightness;
+
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < numberOfCubes; i++) {
+
+        GameObject lantern_fab = GameObject.FindGameObjectWithTag("lantern_fab");
+
+        for (int i = 0; i < numberOfCubes; i++) {
 			// Generate bar
 			float angle = i * Mathf.PI * 2 / numberOfCubes;
 			Vector3 pos = new Vector3(Mathf.Cos (angle), 0 , Mathf.Sin (angle)) * radius;
-			GameObject newCube = Instantiate (cubePrefab, pos, Quaternion.identity) as GameObject;
-			newCube.transform.parent = gameObject.transform;
-			newCube.transform.localScale = initialCubeSize;
-			newCube.GetComponent<MeshRenderer>().material = ballMaterials[i%(ballMaterials.Length)];
-		}
+			GameObject lantern_cube = Instantiate (lantern_fab, pos, Quaternion.identity) as GameObject;
+            GameObject lantern = lantern_cube.transform.Find("lantern_light").gameObject;
+			lantern_cube.transform.parent = gameObject.transform;
+			lantern_cube.transform.localScale = initialCubeSize;
+			lantern_cube.GetComponent<MeshRenderer>().material = ballMaterials[i%(ballMaterials.Length)];
+            Light lantern_light = lantern.GetComponent<Light>();
+            lantern_light.color = ballMaterials[i % (ballMaterials.Length)].color;
+
+            Debug.Log(lantern != null);
+            Debug.Log(lantern_light);
+        }
 		for (int i = 0; i < numBalls; i++) {
 			// Generate ball
 			float xCoord = Random.Range(-10f, 10.0f);
@@ -42,7 +53,7 @@ public class GenerateCubes : MonoBehaviour {
 			newBall.transform.position = ballPos;
 			newBall.GetComponent<MeshRenderer>().material = ballMaterials[i%(ballMaterials.Length)];
 		}
-		musicCubes = GameObject.FindGameObjectsWithTag ("music_cube");
+		musicCubes = GameObject.FindGameObjectsWithTag ("lantern_fab");
 		musicBalls = GameObject.FindGameObjectsWithTag ("music_ball");
 
 	}
@@ -66,7 +77,15 @@ public class GenerateCubes : MonoBehaviour {
 			Vector3 previousScale = musicCubes [i].transform.localScale;
 			previousScale.y = Mathf.Lerp (previousScale.y, spectrum[i] * spectrumScaleMultiplier, Time.deltaTime * mathLerpMultiplier);
 			musicCubes [i].transform.localScale = previousScale;
-		}
+
+            GameObject lantern_cube = musicCubes[i];
+            GameObject lantern = lantern_cube.transform.Find("lantern_light").gameObject;
+            Light lantern_light = lantern.GetComponent<Light>();
+
+            float new_intensity = Mathf.Lerp(lantern_light.intensity, previousScale.y, Time.deltaTime * mathLerpMultiplier);
+            lantern_light.intensity = new_intensity;
+            //Debug.Log(lantern_light.intensity);
+        }
 	}
 
 	public float[] getLatestSpectrumData() {

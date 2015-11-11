@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MusicCubeMaterial
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -138,7 +138,7 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .356790543, g: .23826772, b: .83088237, a: 1}
+        second: {r: .42941162, g: .286764681, b: 1, a: 1}
       data:
         first:
           name: _Color
