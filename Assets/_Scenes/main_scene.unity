@@ -109,7 +109,7 @@ Light:
     type: 2}
   m_PrefabInternal: {fileID: 481832778}
   m_GameObject: {fileID: 158730255}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,6 +189,10 @@ Prefab:
     - target: {fileID: 154944, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
       propertyPath: m_Name
       value: Point light
+      objectReference: {fileID: 0}
+    - target: {fileID: 10814288, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4eed1510333111e44a6d7528912f3e9d, type: 2}
@@ -328,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCubes: 25
-  numBalls: 35
+  numBalls: 50
   radius: 4
   cubePrefab: {fileID: 157996, guid: 603b69890fb6142438a765cfb6b11f48, type: 2}
   ballPrefab: {fileID: 163772, guid: f0a91ee5fc6a65440aba59f57e6cd5f1, type: 2}

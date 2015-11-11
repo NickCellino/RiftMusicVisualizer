@@ -1,0 +1,95 @@
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+[VRDevice] Successfully created device oculus.
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 820M      (ID=0x1140)
+    Vendor:   NVIDIA
+    VRAM:     1994 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\NAudio.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\NAudio.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\NAudio.WindowsMediaFormat.dll (this message is harmless)
+Loading C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\NAudio.WindowsMediaFormat.dll into Unity Child Domain
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.126 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Mitchell\Desktop\RiftVisualizer\UnityRun_Data\Managed\System.dll (this message is harmless)
+Compositor failed to initialize.
+ 
+(Filename:  Line: 48)
+
+Bad config or LibOVR not found. VR disabled.
+ 
+(Filename:  Line: 245)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2c04 -> priority: 1 
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Put selection of genre here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
