@@ -26,6 +26,7 @@ public class UIManagerScript : MonoBehaviour {
     public void ChooseSong()
     {
         fileBrowser = new FileBrowser(new Rect(100, 100, 500, 600), "Choose Song", FileSelected);
+        //fileBrowser.SelectionPattern = "*.mp3";
     }
 
     //Called for every GUI event. The instance variable fileBrowser will only not be null if ChooseSong was just selected
