@@ -45,6 +45,11 @@ public class AudioSourceSingleton : MonoBehaviour {
         audioSource.Play();
     }
 
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
+
     public void setClip(AudioClip songClip)
     {
         audioSource.clip = songClip;
