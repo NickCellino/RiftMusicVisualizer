@@ -62,7 +62,7 @@ public class UIManagerScript : MonoBehaviour {
             while (!wtf.isDone)
             {
             }
-            AudioSourceSingleton.getInstance.setClip(wtf.GetAudioClip(false));
+            SceneManager.getInstance.setClip(wtf.GetAudioClip(false));
         }
     }
 

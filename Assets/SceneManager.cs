@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioSourceSingleton : MonoBehaviour {
+public class SceneManager : MonoBehaviour {
 
-    private static AudioSourceSingleton instance;
+    private static SceneManager instance;
 
     private static AudioSource audioSource;
 
-    public static AudioSourceSingleton getInstance
+    public static SceneManager getInstance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<AudioSourceSingleton>();
+                instance = GameObject.FindObjectOfType<SceneManager>();
                 //Tell unity not to destroy this object when loading a new scene!
                 DontDestroyOnLoad(instance.gameObject);
             }
@@ -37,6 +37,27 @@ public class AudioSourceSingleton : MonoBehaviour {
             //another reference in scene, destroy it!
             if (this != instance)
                 Destroy(this.gameObject);
+        }
+    }
+
+    public void HandleKeyEvent(string command)
+    {
+        Debug.Log(command);
+        if (command == "Escape")
+        {
+            Stop();
+            Application.LoadLevel("menu_scene");
+        }
+        else if(command == "Space")
+        {
+            if(audioSource.isPlaying)
+            {
+                audioSource.Pause();
+            }
+            else 
+            {
+                Play();
+            }
         }
     }
 

@@ -24,7 +24,17 @@ public class GenerateCubes : MonoBehaviour {
 
     void Awake()
     {
-        AudioSourceSingleton.getInstance.Play();
+        SceneManager.getInstance.Play();
+    }
+
+    void OnGUI()
+    {
+        Event e = Event.current;
+        
+        if(e.type.Equals(EventType.KeyDown))
+        {
+            SceneManager.getInstance.HandleKeyEvent(e.keyCode.ToString());
+        }
     }
 
 	// Use this for initialization
