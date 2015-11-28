@@ -7,6 +7,12 @@ TagManager:
   - music_cube
   - music_ball
   - music_source
+  - Scene_Selection
+  - Scrollbar
+  - Scene_Text
+  - lantern_fab
+  - lantern_light
+  - Scroll_List
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,8 @@ public class SceneManager : MonoBehaviour {
 
     private static AudioSource audioSource;
 
+    private static string visualSceneName;
+
     public static SceneManager getInstance
     {
         get
@@ -29,6 +31,7 @@ public class SceneManager : MonoBehaviour {
             //If I am the first instance, make me the Singleton
             instance = this;
             audioSource = GameObject.FindGameObjectWithTag("music_source").GetComponent<AudioSource>();
+            visualSceneName = "main_scene";
             DontDestroyOnLoad(this);
         }
         else
@@ -74,5 +77,15 @@ public class SceneManager : MonoBehaviour {
     public void setClip(AudioClip songClip)
     {
         audioSource.clip = songClip;
+    }
+
+    public void setScene(string scene)
+    {
+        visualSceneName = scene;
+    }
+
+    public string getScene()
+    {
+        return visualSceneName;
     }
 }

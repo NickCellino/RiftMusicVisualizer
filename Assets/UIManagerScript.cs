@@ -2,24 +2,45 @@
 using System.Collections;
 using NAudio;
 using NAudio.Wave;
+using UnityEngine.UI;
 
 public class UIManagerScript : MonoBehaviour {
 
     protected FileBrowser fileBrowser;
+    protected bool popup;
+    private GameObject sceneSelection;
+    private GameObject scrollbar;
+    private GameObject sceneText;
 
-    [SerializeField]
-    protected Texture2D m_directoryImage, m_fileImage;
+    public string[] sceneList;
+    public GameObject sceneButtonPrefab;
 
-    protected void awake()
+    void Awake()
     {
-        GameObject sourceObject = GameObject.FindGameObjectWithTag("music_source");
-        AudioSource audio = sourceObject.GetComponent<AudioSource>();
-        DontDestroyOnLoad(audio);
+        sceneSelection = GameObject.FindGameObjectWithTag("Scene_Selection");
+        scrollbar = GameObject.FindGameObjectWithTag("Scrollbar");
+        sceneText = GameObject.FindGameObjectWithTag("Scene_Text");
+        GameObject scrollList = GameObject.FindGameObjectWithTag("Scroll_List");
+
+        foreach (string s in sceneList)
+        {
+            GameObject sceneButton = (GameObject)Instantiate(sceneButtonPrefab);
+            sceneButton.transform.SetParent(scrollList.transform, false);
+
+            string copy = s;
+
+            sceneButton.GetComponentInChildren<Text>().text = copy;
+
+            
+            sceneButton.GetComponent<Button>().onClick.AddListener(() => ChangeScene(copy));
+        }
+
+        SetSceneSelection(false);
     }
 
     public void StartVisualizer()
     {
-        Application.LoadLevel("main_scene");
+        Application.LoadLevel(SceneManager.getInstance.getScene());
     } 
 
     //TODO: Change look of file browser
@@ -66,8 +87,16 @@ public class UIManagerScript : MonoBehaviour {
         }
     }
 
-    public void ChooseGenre()
+    void ChangeScene(string scene)
     {
-        Debug.Log("Put selection of genre here");
+        SceneManager.getInstance.setScene(scene);
+        SetSceneSelection(false);
+    }
+
+    public void SetSceneSelection(bool state)
+    {
+        sceneSelection.SetActive(state);
+        scrollbar.SetActive(state);
+        sceneText.SetActive(state);
     }
 }

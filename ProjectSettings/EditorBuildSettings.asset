@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/menu_scene.unity
   - enabled: 1
     path: Assets/_Scenes/main_scene.unity
+  - enabled: 1
+    path: Assets/_Scenes/mitch_scene.unity
