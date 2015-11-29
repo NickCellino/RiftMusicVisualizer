@@ -7,6 +7,8 @@ TagManager:
   - music_cube
   - music_ball
   - music_source
+  - ui_canvas
+  - FileBrowPlane
   layers:
   - Default
   - TransparentFX

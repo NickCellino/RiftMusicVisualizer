@@ -6,6 +6,7 @@ using NAudio.Wave;
 public class UIManagerScript : MonoBehaviour {
 
     protected FileBrowser fileBrowser;
+	public GUISkin guiSkin;
 
     [SerializeField]
     protected Texture2D m_directoryImage, m_fileImage;
@@ -25,16 +26,21 @@ public class UIManagerScript : MonoBehaviour {
     //TODO: Change look of file browser
     public void ChooseSong()
     {
-        fileBrowser = new FileBrowser(new Rect(100, 100, 500, 600), "Choose Song", FileSelected);
+        //fileBrowser = new FileBrowser(the_canvas.pixelRect, "Choose Song", FileSelected);
+		fileBrowser = new FileBrowser(new Rect(0, 0, 1024, 1024), "Choose Song", FileSelected);
         //fileBrowser.SelectionPattern = "*.mp3";
     }
 
     //Called for every GUI event. The instance variable fileBrowser will only not be null if ChooseSong was just selected
     protected void OnGUI()
-    {
+    {	
+		GUI.skin = guiSkin;
         if (fileBrowser != null)
         {
+		//	RenderTexture temp = RenderTexture.active;
+		//	RenderTexture.active = GameObject.FindGameObjectWithTag ("FileBrowPlane").GetComponent<RenderTexture>();
             fileBrowser.OnGUI();
+		//	RenderTexture.active = temp;
         }
     }
 
