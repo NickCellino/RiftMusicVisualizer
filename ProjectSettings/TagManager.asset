@@ -9,6 +9,7 @@ TagManager:
   - music_source
   - ui_canvas
   - FileBrowPlane
+  - file_path
   layers:
   - Default
   - TransparentFX

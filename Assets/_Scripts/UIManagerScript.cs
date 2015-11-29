@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using NAudio;
 using NAudio.Wave;
@@ -16,6 +17,9 @@ public class UIManagerScript : MonoBehaviour {
         GameObject sourceObject = GameObject.FindGameObjectWithTag("music_source");
         AudioSource audio = sourceObject.GetComponent<AudioSource>();
         DontDestroyOnLoad(audio);
+		InputField file_input = GameObject.FindGameObjectWithTag ("file_path").GetComponent<InputField> ();
+		file_input.Select ();
+		file_input.ActivateInputField ();
     }
 
     public void StartVisualizer()
@@ -27,8 +31,11 @@ public class UIManagerScript : MonoBehaviour {
     public void ChooseSong()
     {
         //fileBrowser = new FileBrowser(the_canvas.pixelRect, "Choose Song", FileSelected);
-		fileBrowser = new FileBrowser(new Rect(0, 0, 1024, 1024), "Choose Song", FileSelected);
+		// fileBrowser = new FileBrowser(new Rect(0, 0, 1024, 1024), "Choose Song", FileSelected);
         //fileBrowser.SelectionPattern = "*.mp3";
+		//FileSelected (@"D:\Media\Music\Lil Dicky\07_Molly_feat_Brendon_Urie_of_Panic_at_the_Disco.mp3");
+		string file_path = GameObject.FindGameObjectWithTag ("file_path").GetComponent<InputField> ().text;
+		FileSelected (@file_path);
     }
 
     //Called for every GUI event. The instance variable fileBrowser will only not be null if ChooseSong was just selected
