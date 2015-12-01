@@ -19,7 +19,7 @@ public class UIManagerScript : MonoBehaviour {
 
     public void StartVisualizer()
     {
-        Application.LoadLevel("main_scene");
+        Application.LoadLevel("ethan_scene");
     } 
 
     //TODO: Change look of file browser
