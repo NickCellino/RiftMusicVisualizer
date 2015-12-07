@@ -1902,12 +1902,6 @@ MonoBehaviour:
   sceneList:
   - main_scene
   - mitch_scene
-  - hkhk
-  - khh
-  - k
-  - k
-  - knbbbkbkbkbkb
-  - k   k kkl l n
   sceneButtonPrefab: {fileID: 128680, guid: d854840f89fd1204f8ede32ecb23cf47, type: 2}
 --- !u!4 &1991536293
 Transform:

@@ -13,7 +13,7 @@ public class GenerateCubes : MonoBehaviour {
 	public float spectrumScaleMultiplier = 30.0f;
 	public float mathLerpMultiplier = 20.0f;
 	public Vector3 initialCubeSize = new Vector3(1,1,1);
-	public Vector3 initialBallSize = new Vector3(1,1,1);
+	public Vector3 initialBallSize = new Vector3(1,1,1);     
 	public float[] spectrum;
 
 	public GameObject[] musicBalls;
