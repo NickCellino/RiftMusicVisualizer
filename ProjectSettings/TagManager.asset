@@ -10,6 +10,9 @@ TagManager:
   - ui_canvas
   - FileBrowPlane
   - file_path
+  - lantern_fab
+  - lantern_light
+  - glow_cube
   layers:
   - Default
   - TransparentFX
