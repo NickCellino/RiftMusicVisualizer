@@ -7,6 +7,9 @@ TagManager:
   - music_cube
   - music_ball
   - music_source
+  - lantern_fab
+  - lantern_light
+  - glow_cube
   layers:
   - Default
   - TransparentFX
