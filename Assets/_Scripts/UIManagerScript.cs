@@ -26,8 +26,8 @@ public class UIManagerScript : MonoBehaviour {
         AudioSource audio = sourceObject.GetComponent<AudioSource>();
         DontDestroyOnLoad(audio);
 		InputField file_input = GameObject.FindGameObjectWithTag ("file_path").GetComponent<InputField> ();
-		file_input.Select ();
-		file_input.ActivateInputField ();
+		//file_input.Select ();
+		//file_input.ActivateInputField ();
 
 		sceneSelection = GameObject.FindGameObjectWithTag("Scene_Selection");
 		scrollbar = GameObject.FindGameObjectWithTag("Scrollbar");
@@ -111,17 +111,31 @@ public class UIManagerScript : MonoBehaviour {
         Debug.Log("Put selection of genre here");
     }
 
+
+	public string translate_to_scene_name(string display_name) {
+	switch (display_name) {
+		case "Colorful":
+			return "main_scene";
+		case "Strobe":
+			return "ethan_scene";
+		case "Swirly":
+			return "main_scene_dup";
+		default:
+			return "";
+		}
+	}
+
 	void ChangeScene(string scene)
 	{
-		Debug.Log (scene);
-		SceneManager.getInstance.setScene(scene);
+		string scene_name = translate_to_scene_name (scene);
+		SceneManager.getInstance.setScene(scene_name);
 		SetSceneSelection(false);
 	}
 	
 	public void SetSceneSelection(bool state)
 	{
 		sceneSelection.SetActive(state);
-		scrollbar.SetActive(state);
+		//scrollbar.SetActive(state);
 		sceneText.SetActive(state);
 	}
 }

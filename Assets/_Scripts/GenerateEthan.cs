@@ -38,6 +38,16 @@ public class GenerateEthan : MonoBehaviour
         SceneManager.getInstance.Play();
     }
 
+	void OnGUI()
+	{
+		Event e = Event.current;
+		
+		if(e.type.Equals(EventType.KeyDown))
+		{
+			SceneManager.getInstance.HandleKeyEvent(e.keyCode.ToString());
+		}
+	}
+
     // Use this for initialization
     void Start()
     {
